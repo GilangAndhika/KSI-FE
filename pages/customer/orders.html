@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders Form</title>
+    <link rel="stylesheet" href="/assets/css/orders.css">
+</head>
+<body>
+
+    <h2>Order Form</h2>
+    <form action="/submit-order" method="POST">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Enter Username" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Enter Email Address" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" name="phone" placeholder="Enter Phone Number" required>
+
+        <label for="design_order_type">Design Order Type</label>
+        <select name="design_order_type" required>
+            <option value="" disabled selected>Select Design Type</option>
+            <option value="logo">Logo Design</option>
+            <option value="poster">Poster Design</option>
+            <option value="illustration">Illustration</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="reference">Reference (URL or description)</label>
+        <textarea name="reference" placeholder="Provide reference URL or details" rows="3" required></textarea>
+
+        <label for="orders_date">Order Date</label>
+        <input type="datetime-local" name="orders_date" required>
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+</body>
+</html>
