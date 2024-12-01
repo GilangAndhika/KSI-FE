@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Portofolio</title>
+    <link rel="stylesheet" href="/assets/css/form-portofolio.css">
+</head>
+<body>
+
+    <h2>Input Portofolio</h2>
+    <form action="/submit-portofolio" method="POST" enctype="multipart/form-data">
+        <label for="design_image">Design Image</label>
+        <input type="file" name="design_image" accept="image/*" required>
+
+        <label for="design_title">Design Title</label>
+        <input type="text" name="design_title" placeholder="Enter Design Title" required>
+
+        <label for="design_description">Design Description</label>
+        <textarea name="design_description" placeholder="Enter Design Description" rows="4" required></textarea>
+
+        <label for="design_type">Design Type</label>
+        <select name="design_type" required>
+            <option value="" disabled selected>Select Design Type</option>
+            <option value="logo">Logo Design</option>
+            <option value="poster">Poster Design</option>
+            <option value="illustration">Illustration</option>
+            <option value="other">Other</option>
+        </select>
+
+        <button type="submit">Submit Portofolio</button>
+    </form>
+
+</body>
+</html>
