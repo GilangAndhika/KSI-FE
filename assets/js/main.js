@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const home = document.getElementById('home');
 const aboutUs = document.getElementById('abt-us');
+const designer_reg = document.getElementById('designer-register');
 const signIn = document.getElementById('sign-in');
 const join = document.getElementById('join-in');
 const catalog = document.querySelector('.mansory');
@@ -68,4 +69,8 @@ join.addEventListener('click', () => {
 
 catalog.addEventListener('contextmenu', function (e) {
     e.preventDefault();
+});
+
+designer_reg.addEventListener('click', () => {
+    window.location.href = '/pages/designer_register.html';
 });

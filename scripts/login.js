@@ -26,9 +26,17 @@ document.getElementById('login-form').addEventListener('submit', async function 
             // Save token in cookies with key "Auth"
             document.cookie = `Auth=${data.token}; path=/; max-age=86400; SameSite=Lax`;
 
-            // Redirect to dashboard or success page
-            // document.getElementById('response-message').textContent = 'Login successful! Redirecting...';
-            window.location.href = '/dashboard.html'; // Replace with your actual dashboard URL
+            // Redirect to dashboard or success page sesuai role
+            if (data.role == 0) {
+                window.location.href = '/pages/customer/dashboard-cust.html';
+            } else if (data.role == 1) {
+                window.location.href = '/pages/admin/dashboard-admin.html';
+            } else if (data.role == 2) {
+                window.location.href = '/pages/designer/dashboard-designer.html';
+            } else {
+                alert("Role tidak ditemukan");
+            }
+
         } else {
             // Handle error
             document.getElementById('response-message').textContent = `Galat: ${data.message || 'Invalid response from server'}`;
@@ -37,4 +45,5 @@ document.getElementById('login-form').addEventListener('submit', async function 
         console.error('Error during login:', error);
         document.getElementById('response-message').textContent = 'There was an error during login.';
     }
+    
 });
