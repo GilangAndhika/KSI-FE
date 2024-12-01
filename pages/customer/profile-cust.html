@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile</title>
+    <link rel="stylesheet" href="/assets/css/profile-cust.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Customer Profile</h2>
+        <form>
+            <label for="username">Username</label>
+            <input type="text" name="username" value="example_user" readonly>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" value="user@example.com" readonly>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="phone" value="+621234567890" readonly>
+
+            <label for="role">Role</label>
+            <select name="role" disabled>
+                <option value="0" selected>User</option>
+                <option value="1">Admin</option>
+                <option value="2">Designer</option>
+            </select>
+        </form>
+    </div>
+
+</body>
+</html>
