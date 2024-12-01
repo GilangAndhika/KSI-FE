@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>idbiz.id</title>
+
+  <link rel="stylesheet" href="assets/css/fx.css">
+  <link rel="stylesheet" href="assets/css/element.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Major+Mono+Display&family=Nabla&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&family=Tilt+Neon&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-[#201E43] font-['Poppins']">
+
+  <!-- ## NAVBAR ## -->
+  <nav class="flex items-center top-0 sticky backdrop-blur-sm border-b border-gray-700 text-white bg-gray-900/80 
+  grid grid-cols-1 md:grid-cols-3 text-center px-2 xl:px-24 py-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <img 
+          class="rounded-full h-8 w-8"
+          src="http://qplexus.com/wp-content/uploads/2016/02/default-logo.png" 
+          alt=""
+        />
+        <h1 class="font-bold text-2xl">
+          idBiz.
+        </h1>
+      </div>
+      <div id="menu-collapse" class="text-2xl flex items-center align-center justify-end linked md:hidden">
+        <i class="ph ph-list"></i>
+      </div>
+    </div>
+
+    <div class="md:col-span-2 mt-2 md:m-0 no-copy">
+      <ul id="menu-list" class="flex justify-between items-center text-xs md:text-md lg:text-lg gap-4 hidden md:flex">
+        <li id="home" class="linked">Home</li>
+        <li id="abt-us" class="linked">About Us</li>
+        <li class="linked">Services</li>
+        <li class="linked hidden md:block">Become a Seller</li>
+        <li class="cursor-default text-[#134B70] hidden md:block">|</li>
+        <li id="sign-in" class="linked">Sign In</li>
+        <li id="join-in" class="btn linked-btn">Join</li>
+      </ul>
+    </div>
+
+  </nav>
+  <!-- ## END NAVBAR ## -->
+
+  <!-- ## HEADER ## -->
+  <header class="flex flex-col items-center justify-center m-0 lg:my-12 lg:mx-24">
+    <div class="banner md:rounded-xl flex flex-col gap-12">
+      <div class="text-4xl md:text-6xl lg:text-8xl font-semibold stroke no-copy font-['Lora'] text-shadow">
+        <p>Realisasikan Idemu</p>
+        <p>Perluas Jaringanmu</p>
+      </div>
+
+      <div class="flex items-center gap-2 bg-[#201E43] rounded-xl">
+        <input type="search" name="" id="cari"
+          class="md:w-[28rem] h-8 md:h-12 px-4 text-black focus:outline-none rounded-tl-xl rounded-bl-xl"
+          placeholder="Cari layanan yang tersedia" 
+        />
+        <div id="cari" class="flex items-center gap-2 pr-3 cursor-pointer">
+          <p class="hidden md:block">Cari</p><i class="ph ph-magnifying-glass"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+<!-- ## END HEADER ## -->
+
+<!-- ## Services ## -->
+<section class="my-4 mb-24 lg:mx-24">
+  <div class="text-white text-center">
+    <h1 class="text-xl md:text-4xl font-bold">Popular Services</h1>
+    <p class="text-sm md:text-md text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mt-8">
+
+    <!-- ## Card 1 ## -->
+    <div class="bg-white flex flex-col items-center rounded-lg py-8 gap-4">
+      <p class="font-semibold">Poster Design</p>
+      <i class="ph ph-note-blank text-8xl"></i>
+      <div class="border border-[#201E43] linked2 rounded-lg">
+        <a href="pages/card-poster.html">
+          <P class="px-12">Lihat</P>
+        </a>
+      </div>
+    </div>
+
+    <!-- ## Card 2 ## -->
+    <div class="bg-white flex flex-col items-center rounded-lg py-8 gap-4">
+      <p class="font-semibold">Banner Design</p>
+      <i class="ph ph-printer text-8xl"></i>
+      <div class="border border-[#201E43] linked2 rounded-lg">
+        <a href="pages/card-banner.html">
+          <P class="px-12">Lihat</P>
+        </a>
+      </div>
+    </div>
+
+    <!-- ## Card 3 ## -->
+    <div class="bg-white flex flex-col items-center rounded-lg py-8 gap-4">
+      <p class="font-semibold">Photography</p>
+      <i class="ph ph-camera text-8xl"></i>
+      <div class="border border-[#201E43] linked2 rounded-lg">
+        <a href="pages/card-photography.html">
+          <P class="px-12">Lihat</P>
+        </a>
+      </div>
+    </div>
+
+    <!-- ## Card 4 ## -->
+    <div class="bg-white flex flex-col items-center rounded-lg py-8 gap-4">
+      <p class="font-semibold">Photo Editing</p>
+      <i class="ph ph-images text-8xl"></i>
+      <div class="border border-[#201E43] linked2 rounded-lg">
+        <a href="pages/card-photo-editing.html">
+          <P class="px-12">Lihat</P>
+        </a>
+      </div>
+    </div>
+
+    <!-- ## Card 5 ## -->
+    <div class="bg-white flex flex-col items-center rounded-lg py-8 gap-4">
+      <p class="font-semibold">Video Editing</p>
+      <i class="ph ph-film-strip text-8xl"></i>
+      <div class="border border-[#201E43] linked2 rounded-lg">
+        <a href="pages/card-video-editing.html">
+          <P class="px-12">Lihat</P>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ## END Services ## -->
+
+<!-- ## CONTENT ## -->
+ <section class="my-4 mb-24 lg:mx-24">
+  <div class="text-white text-center">
+    <h1 class="text-xl md:text-4xl font-bold">Made on idBiz.</h1>
+    <p class="text-sm md:text-md text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+  </div>
+
+  <div class="mt-8 columns-2 md:columns-4 gap-4 mansory">
+    <img src="http://akademiberbagi.org/wp-content/uploads/2018/06/Akbersolo_Design_update.jpeg" class="rounded-xl" alt="">
+    <img src="https://i.ytimg.com/vi/F7J4U-14nNw/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDLfILTIHHtYhMknVl3iuUqo19z9A" class="rounded-xl" alt="">
+    <img src="https://i.pinimg.com/originals/63/f1/bc/63f1bc13290db0474f1318ed510eb25a.jpg" class="rounded-xl" alt="">
+    <img src="https://tse2.mm.bing.net/th?id=OIP.i46PgL6UZWAVmV90YONLXAHaEK&pid=Api&P=0&h=180" class="rounded-xl" alt="">
+    <img src="https://cf.shopee.co.id/file/id-11134207-7r98z-lyxdn73qrg2044" class="rounded-xl" alt="">
+    <img src="https://jayaprint.id/wp-content/uploads/2021/12/Spanduk-e1638332048172.jpg" class="rounded-xl" alt="">
+    <img src="https://alexandra.bridestory.com/image/upload/blogs/photo-188-eRJ3E0jtM.jpg" class="rounded-xl" alt="">
+    <img src="https://idwebhost.com/blog/wp-content/uploads/2024/10/UI-UX-A.webp" class="rounded-xl" alt="">
+    <img src="https://cdn.antaranews.com/cache/1200x800/2022/07/21/IMG-20220720-WA0028.jpg" class="rounded-xl" alt="">
+    <img src="https://suwun.co.id/blog/wp-content/uploads/2023/01/prewedding-lombok.jpg" class="rounded-xl" alt="">
+    <img src="https://rhinoindonesia.com/wp-content/uploads/2023/08/Ide-desain-kaos-kreatif-unik-dan-simple.jpg" class="rounded-xl" alt="">
+    <img src="https://asset.kompas.com/crops/Li_DSAOCCeNELX_susJPOsbTjaw=/0x196:2400x1796/750x500/data/photo/2022/02/11/620638d847203.jpg" class="rounded-xl" alt="">
+    <img src="https://rubrikgrafis.com/wp-content/uploads/2021/03/E-COURSE-APP.jpeg" class="rounded-xl" alt="">
+    <img src="https://assets.hongkiat.com/uploads/25-free-3d-modelling-applications-you-should-not-miss/1-wings3d.jpg" class="rounded-xl" alt="">
+    <img src="https://www.decorpot.com/images/953326225what-is-3d-interior-design.jpg" class="rounded-xl" alt="">
+
+  </div>
+ </section>
+
+<!-- ## FOOTER ## -->
+<footer class="bg-gray-900 text-white py-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 px-4 lg:px-24">
+
+    <!-- ## Company ## -->
+    <div class="flex flex-col gap-4">
+      <h1 class="text-2xl font-bold">Company</h1>
+      <div class="flex flex-col text-sm text-gray-500 footer-list">
+        <a href="#">About idBiz</a>
+        <a href="#">Help & Support</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Press & News</a>
+        <a href="#">Partnerships</a>
+        <a href="#">Affiliates</a>
+      </div>
+    </div>
+
+    <!-- ## Customer ## -->
+    <div class="flex flex-col gap-4">
+      <h1 class="text-xl font-bold">For Customer</h1>
+      <div class="flex flex-col text-sm text-gray-500 footer-list">
+        <a href="#">How idBiz Works</a>
+        <a href="#">idBiz Guides</a>
+        <a href="#">idBiz Learn</a>
+        <a href="#">idBiz Answers</a>
+        <a href="#">Ask idBiz</a>
+      </div>
+    </div>
+
+    <!-- ## Designer ## -->
+    <div class="flex flex-col gap-4">
+      <h1 class="text-xl font-bold">For Designer</h1>
+      <div class="flex flex-col text-sm text-gray-500 footer-list">
+        <a href="#">Become an idbiz Seller</a>
+        <a href="#">Become an Agency</a>
+        <a href="#">Community Hub</a>
+        <a href="#">Forum</a>
+        <a href="#">Events</a>
+      </div>
+    </div>
+
+    <!-- ## Categories ## -->
+    <div class="flex flex-col gap-4">
+      <h1 class="text-xl font-bold">Categories</h1>
+      <div class="flex flex-col text-sm text-gray-500 footer-list">
+        <a href="">Design Graphic</a>
+        <a href="#">Photography</a>
+        <a href="#">Filmatography</a>
+        <a href="#">Editing</a>
+        <a href="#">Programming</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ## COPYRIGHT ## -->
+
+  <div class="mx-4 lg:mx-24 mt-4 pt-2 text-gray-500 border-t border-gray-700">
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center md:items-baseline">
+
+      <div class="flex gap-4 items-baseline justify-center md:justify-start">
+        <h1 class="font-bold text-2xl">
+          idBiz.
+        </h1>
+        <p class="text-sm">© 2024 idBiz. All rights reserved.</p>
+      </div>
+      
+      <div class="flex gap-4 justify-center md:justify-end">
+        <i class="ph ph-instagram-logo text-2xl"></i>
+        <i class="ph ph-facebook-logo text-2xl"></i>
+        <i class="ph ph-discord-logo text-2xl"></i>
+        <i class="ph ph-x-logo text-2xl"></i>
+        <i class="ph ph-linkedin-logo text-2xl"></i>
+        <div class="flex  items-center gap-2 border border-gray-800 rounded-2xl px-2">
+          <i class="ph ph-globe text-2xl"></i>
+          <p class="text-md">English</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

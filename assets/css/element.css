@@ -1,0 +1,57 @@
+.btn {
+    border: 1px solid #134B70;
+    padding: 4px 24px;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background-color: #171e4e;
+    transition: .5s;
+}
+
+.banner {
+    background-image: url('../assets/img/geometric.jpg');
+    /* background-color: rgba(0, 0, 0, 0.2); 
+    background-blend-mode: multiply;  */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.top-banner-poster {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-list a {
+    margin-bottom: 2vh;
+}
+
+.footer-list a:hover {
+    text-decoration: underline;
+}
+
+.mansory img {
+    margin-bottom: 18px;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media screen and (max-width: 425px) {
+    .parallax {
+        height: 40vh;
+    }
+    
+}

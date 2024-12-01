@@ -1,0 +1,43 @@
+.linked:hover {
+    color: #EEEEEE;
+    /* border-bottom: 1px solid #EEEEEE; */
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #EEEEEE, 0 0 40px #508C9B, 0 0 50px #508C9B, 0 0 60px #508C9B, 0 0 70px #508C9B;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.linked, .linked-btn, .linked2 {
+    transition: .5s;
+    cursor: pointer;
+}
+
+.linked-btn:hover {
+    box-shadow: 0 0 12px #ffffff2b;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #EEEEEE, 0 0 40px #508C9B, 0 0 50px #508C9B, 0 0 60px #508C9B, 0 0 70px #508C9B;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.stroke {
+    text-shadow: 0 0 2px #201E43;
+    cursor: default;
+}
+
+.linked2:hover {
+    color: #EEEEEE;
+    transition: .5s;
+    background-color: #201E43;
+    cursor: pointer;
+}
+
+.no-copy {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+.text-shadow {
+    text-shadow: #7b00ff 0px 0px 150px;
+}
