@@ -5,117 +5,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin</title>
-    <style>
-        /* Basic styling for layout */
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Sidebar styling */
-        .sidebar {
-            width: 250px;
-            background-color: #333;
-            color: white;
-            height: 100vh;
-            padding-top: 20px;
-        }
-
-        .sidebar a {
-            display: block;
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-            font-size: 18px;
-            border-bottom: 1px solid #444;
-        }
-
-        .sidebar a:hover {
-            background-color: #575757;
-        }
-
-        /* Main content styling */
-        .main-content {
-            flex-grow: 1;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 24px;
-            color: #333;
-        }
-
-        /* Table styling */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f4f4f4;
-        }
-
-        /* Responsiveness */
-        @media screen and (max-width: 768px) {
-            .sidebar {
-                width: 200px;
-            }
-
-            .main-content {
-                padding: 15px;
-            }
-
-            table, th, td {
-                font-size: 14px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../../assets/css/admin/style.css">
 </head>
 
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <a href="/pages/admin/dashboard-admin.html">Dashboard</a>
-        <a href="/pages/admin/profiles.html">Profiles</a>
-        <a href="/pages/admin/portofolio.html">Portofolio</a>
-        <a href="../login.html">Logout</a>
+    <div class="container-sidebar">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <a href="/pages/admin/dashboard-admin.html">Dashboard</a>
+            <a href="/pages/admin/profiles.html">Profiles</a>
+            <a href="/pages/admin/portofolio.html">Portofolio</a>
+            <a href="../login.html">Logout</a>
+        </div>
+    
+        <!-- Main content -->
+        <div class="main-content">
+            <h1>Welcome to Admin Dashboard</h1>
+    
+            <!-- Tables displaying user data -->
+            <h2>User Management</h2>
+
+            <button id="addUserButton">Tambah User</button>
+    
+            <!-- Table for Admin role -->
+            <h3>Admin</h3>
+            <table id="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be inserted dynamically -->
+                </tbody>
+            </table>
+    
+            <!-- Table for Designer role -->
+            <h3>Designer</h3>
+            <table id="designer-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be inserted dynamically -->
+                </tbody>
+            </table>
+    
+            <!-- Table for User role -->
+            <h3>Customer</h3>
+            <table id="user-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be inserted dynamically -->
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    <!-- Main content -->
-    <div class="main-content">
-        <h1>Welcome to Admin Dashboard</h1>
+    
 
-        <!-- Table displaying user data -->
-        <h2>User Management</h2>
-        <table id="user-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Data will be inserted here dynamically using JavaScript -->
-            </tbody>
-        </table>
+    <!-- Modal for Editing User -->
+    <div id="editUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeEditModal()">&times;</span>
+            <h2>Edit User</h2>
+            <form id="editUserForm">
+                <label for="edit-user-id">ID:</label>
+                <input type="text" id="edit-user-id" name="id" readonly>
+
+                <label for="edit-username">Username:</label>
+                <input type="text" id="edit-username" name="username" required>
+
+                <label for="edit-phone">Phone:</label>
+                <input type="tel" id="edit-phone" name="phone" required>
+
+                <label for="edit-email">Email:</label>
+                <input type="email" id="edit-email" name="email" required>
+
+                <label for="edit-role">Role:</label>
+                <select id="edit-role" name="role">
+                    <option value="0">Customer</option>
+                    <option value="1">Admin</option>
+                    <option value="2">Designer</option>
+                </select>
+
+                <button type="button" onclick="saveUserChanges()">Save Changes</button>
+            </form>
+        </div>
     </div>
 
-    <script src="admin.js"></script>
+    <!-- Modal for Input User -->
+    <div id="inputUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeInputModal()">&times;</span>
+            <h2>Input User</h2>
+            <form id="inputUserForm">
+                <label for="input-username">Username:</label>
+                <input type="text" id="input-username" name="username" required>
+
+                <label for="input-phone">Phone:</label>
+                <input type="tel" id="input-phone" name="phone" required>
+
+                <label for="input-email">Email:</label>
+                <input type="email" id="input-email" name="email" required>
+
+                <label for="input-password">Password:</label>
+                <input type="password" id="input-password" name="password" required>
+
+                <label for="input-role">Role:</label>
+                <select id="input-role" name="role">
+                    <option value="0">Customer</option>
+                    <option value="1">Admin</option>
+                    <option value="2">Designer</option>
+                </select>
+
+                <button type="button" onclick="inputNewUser()">Add User</button>
+            </form>
+        </div>
+    </div>  
+
+
+    <script src="js/admin.js"></script>
 </body>
 
 </html>
