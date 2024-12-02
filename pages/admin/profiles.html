@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin</title>
+    <title>Profile Admin</title>
     <style>
         /* Basic styling for layout */
         body {
@@ -95,27 +95,44 @@
 
     <!-- Main content -->
     <div class="main-content">
-        <h1>Welcome to Admin Dashboard</h1>
+        <h1>Admin Profile</h1>
 
-        <!-- Table displaying user data -->
-        <h2>User Management</h2>
+        <!-- Profile details section -->
+        <div id="profile-details">
+            <p><strong>ID:</strong> <span id="profile-id"></span></p>
+            <p><strong>Username:</strong> <span id="profile-username"></span></p>
+            <p><strong>Email:</strong> <span id="profile-email"></span></p>
+            <p><strong>Phone:</strong> <span id="profile-phone"></span></p>
+            <p><strong>Role:</strong> <span id="profile-role"></span></p>
+        </div>
+
+        <!-- action -->
+        <div id="action">
+            <button id="edit-profile">Edit Profile</button>
+            <button id="delete-profile">Delete Profile</button>
+        </div>
+
+        <hr>
+
+        <!-- Tabel untuk menampilkan data profile user -->
+        <!-- <h2>User Management</h2>
         <table id="user-table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Username</th>
                     <th>Email</th>
+                    <th>Phone</th>
                     <th>Role</th>
-                    <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Data will be inserted here dynamically using JavaScript -->
-            </tbody>
-        </table>
+            <tbody> -->
+                <!-- Data user akan ditambahkan di sini -->
+            <!-- </tbody>
+        </table> -->
     </div>
 
-    <script src="admin.js"></script>
+    <script src="profile.js"></script> <!-- External JS file -->
 </body>
 
 </html>

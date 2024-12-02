@@ -23,27 +23,27 @@ document.getElementById('login-form').addEventListener('submit', async function 
         console.log('Response JSON:', data); // Debugging response
 
         if (response.ok && data.token) {
-            // Save token in cookies with key "Auth"
-            document.cookie = `Auth=${data.token}; path=/; max-age=86400; SameSite=Lax`;
+            // Save token and user role in localStorage
+            localStorage.setItem('authToken', data.token);
+            localStorage.setItem('userRole', data.role);
 
-            // Redirect to dashboard or success page sesuai role
+            // Redirect to the correct dashboard based on role
             if (data.role == 0) {
-                window.location.href = '/pages/customer/dashboard-cust.html';
+                window.location.href = '/pages/customer/profile-cust.html';
             } else if (data.role == 1) {
                 window.location.href = '/pages/admin/dashboard-admin.html';
             } else if (data.role == 2) {
-                window.location.href = '/pages/designer/dashboard-designer.html';
+                window.location.href = '/pages/designer/profile-designer.html';
             } else {
                 alert("Role tidak ditemukan");
             }
 
         } else {
-            // Handle error
+            // Handle error message
             document.getElementById('response-message').textContent = `Galat: ${data.message || 'Invalid response from server'}`;
         }
     } catch (error) {
         console.error('Error during login:', error);
         document.getElementById('response-message').textContent = 'There was an error during login.';
     }
-    
 });

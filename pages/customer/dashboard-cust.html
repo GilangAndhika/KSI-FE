@@ -4,10 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer</title>
+    <style>
+        /* Add some basic styling for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    // navbar dengan menu home dan profile
 
-    // buat section untuk menampilkan produk-produk yang dijual oleh penjual dari data portofolio
+    <!-- Navbar -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <!-- Section to display products -->
+    <section>
+        <h2>Products</h2>
+        <div id="portfolio-list">
+            <!-- Product portfolio items will be appended here -->
+        </div>
+    </section>
+
+    <script>
+        // Check if a token exists in localStorage
+        const token = localStorage.getItem('Auth');
+        if (!token) {
+            console.error("No token found in localStorage.");
+        }
+
+        // Check if a token exists in cookies
+        const cookies = document.cookie;
+        if (!cookies) {
+            console.error("No cookies found.");
+        }
+        
+
+        // Function to fetch and display portfolio data
+        async function fetchPortofolios() {
+            try {
+                const response = await fetch('http://127.0.0.1:8080/portofolios', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + localStorage.getItem('Auth'),
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include', // Allow cookies to be included if needed
+                });
+
+                const token = localStorage.getItem('Auth');
+                if (!token) {
+                    console.error("No token found in localStorage.");
+                    return;
+                }
+
+                console.log("Token found in localStorage:", token);
+                console.log(data);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const portfolioList = document.getElementById("portfolio-list");
+
+                    // Clear any existing items
+                    portfolioList.innerHTML = '';
+
+                    // Loop through the data and create portfolio cards
+                    data.forEach(portofolio => {
+                        const productCard = document.createElement('div');
+                        productCard.className = 'product-card';
+
+                        productCard.innerHTML = `
+                            <img src="${portofolio.design_image}" alt="${portofolio.design_title}">
+                            <h3>${portofolio.design_title}</h3>
+                            <p>${portofolio.design_description}</p>
+                            <p><strong>Type:</strong> ${portofolio.design_type}</p>
+                        `;
+
+                        portfolioList.appendChild(productCard);
+                    });
+                } else {
+                    console.error("Failed to fetch portfolio data:", response.status);
+                }
+            } catch (error) {
+                console.error("Error fetching portfolio data:", error);
+            }
+        }
+
+        // Call the function to fetch and display portfolio data when the page loads
+        fetchPortofolios();
+    </script>
+
 </body>
 </html>

@@ -5,8 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Portofolio</title>
     <link rel="stylesheet" href="/assets/css/form-portofolio.css">
+
+    <style>
+        /* Add some basic styling for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <a href="form-portofolio.html">Portofolio</a>
+        <a href="profile-designer.html">Profile</a>
+        <a href="../login.html">Logout</a>
+    </nav>
 
     <h2>Input Portofolio</h2>
     <form action="/submit-portofolio" method="POST" enctype="multipart/form-data">
