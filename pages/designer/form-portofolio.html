@@ -69,7 +69,13 @@
     </nav>
 
     <h2>Input Portofolio</h2>
-    <form action="/submit-portofolio" method="POST" enctype="multipart/form-data">
+    <form method="POST">
+        <label for="id_user">ID User</label>
+        <input type="text" name="id_user" placeholder="ID User" readonly>
+
+        <label for="username">Username</label>
+        <input type="text" name="username" value="example_user" readonly>
+
         <label for="design_image">Design Image</label>
         <input type="file" name="design_image" accept="image/*" required>
 
@@ -91,5 +97,6 @@
         <button type="submit">Submit Portofolio</button>
     </form>
 
+    <script src="js/up-portofolio.js"></script>
 </body>
 </html>
