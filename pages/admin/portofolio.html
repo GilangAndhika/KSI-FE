@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Admin</title>
     <link rel="stylesheet" href="../../assets/css/admin/style.css">
-
 </head>
 
 <body>
@@ -18,17 +17,21 @@
             <a href="/pages/admin/portofolio.html">Portofolio</a>
             <a href="../login.html">Logout</a>
         </div>
-    
+
         <!-- Main content -->
         <div class="main-content">
             <h1>Portofolio Management</h1>
-    
-            <!-- Tabel untuk menampilkan data portfolio -->
+
+            <!-- Table to display portfolio data -->
             <table id="portfolio-table">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Role</th>
                         <th>Description</th>
                         <th>Image</th>
                         <th>Type</th>
@@ -36,18 +39,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Data portfolio akan ditambahkan di sini -->
+                    <!-- Portfolio data will be populated here -->
                 </tbody>
             </table>
             <br>
-            <button>
-                Input
-            </button>
+            <!-- <button id="input-button">Input</button> -->
         </div>
     </div>
 
-
-    <script src="js/portofolio.js"></script> <!-- External JS file -->
+    <script src="js/portofolio.js"></script>
 </body>
 
 </html>

@@ -1,52 +1,53 @@
-async function fetchPortofolios() {
+// Function to fetch portfolio data from the backend
+async function fetchPortfolios() {
     try {
-        const response = await fetch('http://127.0.0.1:8080/portofolios', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            credentials: 'include', // Allow cookies to be included if needed
-        });
-
-        if (response.ok) {
-            const responseData = await response.json();
-            console.log(responseData); // Debug response to check structure
-
-            // Extract the `portofolios` array
-            const data = responseData.portofolios;
-
-            if (Array.isArray(data)) {
-                const tableBody = document.getElementById("portfolio-table").getElementsByTagName('tbody')[0];
-
-                // Clear any existing rows
-                tableBody.innerHTML = '';
-
-                // Loop through the data and create rows for each portfolio
-                data.forEach(portofolio => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${portofolio.id}</td>
-                        <td>${portofolio.title}</td>
-                        <td>${portofolio.description}</td>
-                        <td><img src="${portofolio.image}" alt="${portofolio.title}" style="width: 100px; height: auto;"></td>
-                        <td>${portofolio.type}</td>
-                        <td>
-                            <button onclick="editPortofolio('${portofolio.id}')">Edit</button>
-                            <button onclick="deletePortofolio('${portofolio.id}')">Delete</button>
-                        </td>
-                    `;
-                    tableBody.appendChild(row);
-                });
-            } else {
-                console.error("Portfolios data is not an array:", data);
-            }
-        } else {
-            console.error("Failed to fetch portfolio data:", response.status);
+        const response = await fetch('http://127.0.0.1:8080/portofolios'); // Adjust endpoint if needed
+        if (!response.ok) {
+            throw new Error('Failed to fetch portfolios');
         }
+
+        const data = await response.json(); // Get the JSON data
+
+        // Get the table body element
+        const tableBody = document.querySelector('#portfolio-table tbody');
+        tableBody.innerHTML = ''; // Clear any existing rows
+
+        // Loop through the portfolios and add rows to the table
+        data.portofolios.forEach(portfolio => {
+            const row = document.createElement('tr');
+            
+            row.innerHTML = `
+                <td>${portfolio.id}</td>
+                <td>${portfolio.title}</td>
+                <td>${portfolio.username}</td>
+                <td>${portfolio.email}</td>
+                <td>${portfolio.phone}</td>
+                <td>
+                    ${portfolio.role === 0 ? 'Customer' : portfolio.role === 1 ? 'Admin' : 'Designer'}
+                </td>
+                <td>${portfolio.description}</td>
+                <td><img src="http://127.0.0.1:8080/uploads/${portfolio.image}" alt="Design Image" width="100"></td>
+                <td>${portfolio.type}</td>
+                <td>
+                    <button class="edit-btn" data-id="${portfolio.id}">Edit</button>
+                    <button class="delete-btn" data-id="${portfolio.id}">Delete</button>
+                </td>
+            `;
+            
+            tableBody.appendChild(row); // Add the new row to the table
+        });
     } catch (error) {
-        console.error("Error fetching portfolio data:", error);
+        console.error('Error fetching portfolios:', error);
     }
 }
+
+// Call fetchPortfolios function on page load
+document.addEventListener('DOMContentLoaded', fetchPortfolios);
+
+// Handle "Input" button click to redirect to portfolio input page
+document.getElementById('input-button').addEventListener('click', function () {
+    window.location.href = '/pages/admin/input-portofolio.html'; // Adjust the URL for the input form
+});
 
 // Function to handle editing portfolio (just a placeholder)
 function editPortofolio(portofolioId) {

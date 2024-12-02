@@ -28,14 +28,11 @@ async function fetchPortofolios() {
                     const portfolioItem = document.createElement('div');
                     portfolioItem.className = 'portfolio-item';
                     portfolioItem.innerHTML = `
-                        <img src="${portofolio.image}" alt="${portofolio.title}" style="width: 50%; height: auto;">
+                        <img src="http://127.0.0.1:8080/uploads/${portofolio.image}" alt="${portofolio.title}" style="width: 50%; height: auto;">
                         <h2>${portofolio.title}</h2>
                         <p>${portofolio.description}</p>
+                        <p>by ${portofolio.username}</p>
                         <span class="design-type">${portofolio.type}</span>
-                        <div>
-                            <button onclick="editPortofolio('${portofolio.id}')">Edit</button>
-                            <button onclick="deletePortofolio('${portofolio.id}')">Delete</button>
-                        </div>
                         <hr>
                     `;
                     container.appendChild(portfolioItem);
